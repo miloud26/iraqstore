@@ -313,11 +313,7 @@ export default function Form({ id }) {
               id="priceDelevery"
               sx={{ fontWeight: "bold", fontSize: "22px" }}
             >
-              {quantity >= 2
-                ? "توصيل مجاني"
-                : delevery === 0 || delevery === undefined
-                  ? "حسب الولاية"
-                  : `${price} د.ع`}
+              {delevery}
             </Typography>
           </Box>
           <Box
