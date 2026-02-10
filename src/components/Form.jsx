@@ -332,11 +332,7 @@ export default function Form({ id }) {
               id="total"
               sx={{ fontWeight: "bold", fontSize: "22px" }}
             >
-              {quantity >= 2
-                ? `${quantity * price} د.ع`
-                : delevery === 0 || delevery === undefined
-                  ? `${quantity * price} د.ع`
-                  : `${quantity * price + delevery} د.ع`}
+              {`${quantity * price + delevery} د.ع`}
             </Typography>
           </Box>
         </Box>
