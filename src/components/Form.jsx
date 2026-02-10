@@ -109,7 +109,7 @@ export default function Form({ id }) {
       data.append("wilaya", wilaya);
       data.append("quantity", quantity.toString());
       data.append("model", `${modelColr} / ${modelSize}`);
-      data.append("prix", `${price}`);
+      data.append("prix", `${price} / ${quantity * price + delevery} د.ع`);
 
       await fetch(
         "https://script.google.com/macros/s/AKfycbz82sqnVLddNJrx3W3LNbBwKwtKTCVboNFXnpAxFEIf7MMZHlQfDy6LMAU-BKOvEjfdIA/exec",

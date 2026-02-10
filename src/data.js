@@ -1,7 +1,7 @@
 export const data = [
   {
     id: "l-2",
-    nameProdcut: "عباية ستر الانصاف",
+    nameProdcut: "قطاعة الخضر الكهربائية",
     price: "53500",
     delevery: 6500,
     clr: [],
