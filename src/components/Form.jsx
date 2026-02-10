@@ -313,7 +313,7 @@ export default function Form({ id }) {
               id="priceDelevery"
               sx={{ fontWeight: "bold", fontSize: "22px" }}
             >
-              {delevery}
+              {`${delevery} د.ع`}
             </Typography>
           </Box>
           <Box

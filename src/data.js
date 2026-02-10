@@ -7,6 +7,6 @@ export const data = [
     clr: [],
     size: [],
     descImag:
-      "https://res.cloudinary.com/dsqon0kae/image/upload/v1770688058/brand-luxury-full-1770688044541.jpg",
+      "https://res.cloudinary.com/dsqon0kae/image/upload/v1770688522/brand-luxury-full-1770688511095.jpg",
   },
 ];
