@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+
+  font-family: "Vazirmatn", sans-serif;
+  letter-spacing: 1.5px;
+}
+img {
+  border-radius: 10px;
+}
+.valid {
+  border: 2px blue solid !important;
+}
+.fixed-order-btn {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 94%;
+  max-width: 440px;
+
+  background: linear-gradient(135deg, #0b0b0b, #222222);
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+
+  padding: 18px 20px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+  z-index: 99999;
+
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.6),
+    0 0 0 2px rgba(255, 255, 255, 0.08),
+    0 0 22px rgba(255, 255, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.fixed-order-btn:hover {
+  opacity: 0.96;
+}
+
+.fixed-order-btn:active {
+  transform: translateX(-50%) scale(0.97);
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.6),
+    0 0 14px rgba(255, 255, 255, 0.18);
+}
