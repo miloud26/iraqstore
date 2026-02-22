@@ -47,6 +47,7 @@ export default function Form({ id }) {
   const [quantity, setQuantity] = useState("1");
   const [modelColr, setModelColr] = useState("");
   const [modelSize, setModelSize] = useState("");
+  const [adress, setAdress] = useState("");
   const [correctNumber, setCorrectNumber] = useState(false);
   const phoneInput = useRef(null);
 
@@ -57,22 +58,8 @@ export default function Form({ id }) {
   const handleModel = (e) => {
     e.target.classList.toggle("valid");
   };
-  const isMakeOrder = JSON.parse(localStorage.getItem("makeOrder"));
 
-  useEffect(() => {
-    if (!isMakeOrder) return;
 
-    const now = Date.now();
-
-    if (isMakeOrder.expire < now) {
-      localStorage.removeItem("makeOrder");
-      return; // ⛔ امنع التحويل
-    }
-
-    if (isMakeOrder.value === 1) {
-      window.location.pathname = "/products/thankyou";
-    }
-  }, [isMakeOrder]);
 
   useEffect(() => {
     const regex = /^(0?7\d{8})$/;
@@ -109,9 +96,8 @@ export default function Form({ id }) {
       data.append("wilaya", wilaya);
       data.append("quantity", quantity.toString());
       data.append("model", `${modelColr} / ${modelSize}`);
-      data.append("prix", `${price} / ${quantity * price + delevery} د.ع`);
-
-      await fetch(
+      data.append("adress", adress);
+      data.append("prix", `${price} / ${quantity * price + delevery} د.ع`);      await fetch(
         "https://script.google.com/macros/s/AKfycbz82sqnVLddNJrx3W3LNbBwKwtKTCVboNFXnpAxFEIf7MMZHlQfDy6LMAU-BKOvEjfdIA/exec",
         {
           method: "POST",
@@ -121,16 +107,10 @@ export default function Form({ id }) {
 
       setBtnDisebled(false);
 
-      localStorage.setItem(
-        "makeOrder",
-        JSON.stringify({
-          value: 1,
-          expire: new Date().getTime() + 15 * 60 * 60 * 1000,
-        }),
-      );
-      setTimeout(() => {
+ 
+     
         window.location.pathname = "/products/thankyou";
-      }, 3000);
+ 
     } catch (error) {
       console.log(error);
     }
@@ -212,7 +192,7 @@ export default function Form({ id }) {
           }}
         >
           <FormControl fullWidth sx={{ marginBottom: "15px" }}>
-            <InputLabel>{"الولاية"}</InputLabel>
+            <InputLabel>{"المحافظة"}</InputLabel>
             <Select
               sx={{ direction: "ltr" }}
               labelId="demo-simple-select-label"
@@ -251,7 +231,7 @@ export default function Form({ id }) {
               }}
               placeholder={"العنوان التفصيلي"}
               label={"العنوان التفصيلي"}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setAdress(e.target.value)}
             />
           </Box>
         </Box>

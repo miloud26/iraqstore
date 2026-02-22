@@ -84,13 +84,7 @@ export default function ThankYouPage() {
             },
           }}
           onClick={() => {
-            const baseURL = localStorage.getItem("baseURL");
-            const isMakeOrder = JSON.parse(localStorage.getItem("makeOrder"));
-            if (baseURL || isMakeOrder?.value === 1) {
-              window.location.href = "/products/thankyou";
-            } else {
-              window.location.href = baseURL;
-            }
+       window.location.href = "/products/thankyou";
           }}
         >
           العودة للصفحة الرئيسية
